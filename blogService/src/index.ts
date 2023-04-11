@@ -6,6 +6,7 @@ import cookieSession from 'cookie-session';
 
 import setEnvironment from './env';
 setEnvironment();
+const PORT = 6379;
 
 require('./services/cache');
 
@@ -46,7 +47,7 @@ mongoose.connect(nconf.get('db'),
 );
 // mongoose.set('strictQuery', false);
 
-const server = app.listen(nconf.get('PORT'), () => {
-  console.log(`Blog service started on port ${nconf.get('PORT')}`);
+const server = app.listen(PORT, () => {
+  console.log(`Auth service started on port ${PORT}`);
 });
 server.timeout = 1000000;
