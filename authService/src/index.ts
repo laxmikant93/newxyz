@@ -7,6 +7,7 @@ setEnvironment();
 
 //////////// IMPORTED MODELS
 // require('./models/User');
+const PORT= 4000;
 
 const app: Application = express();
 
@@ -39,7 +40,7 @@ mongoose.connect(nconf.get('db'),
 );
 mongoose.set('strictQuery', false);
 
-const server = app.listen(nconf.get('PORT'), () => {
-  console.log(`Auth service started on port ${nconf.get('PORT')}`);
+const server = app.listen(PORT, () => {
+  console.log(`Auth service started on port ${PORT}`);
 });
 server.timeout = 1000000;
