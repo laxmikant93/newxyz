@@ -1,0 +1,12 @@
+{
+  "db": "mongodb+srv://filehandle:M6sVOhpQRRC7PpLz@cluster0.y6eg7.mongodb.net/fileHandledb?retryWrites=true&w=majority",
+  "db1": "mongodb+srv://filehandle:M6sVOhpQRRC7PpLz@cluster0.y6eg7.mongodb.net/fileHandledb?retryWrites=true&w=majority",
+  "PORT": "5000",
+  "hashKey": "kashfkhiyew9898@kjhksfhkksf",
+  "encalgorithm": "aes-256-cbc",
+  "hashalgorithm": "sha256",
+  "redisUrl": "redis://127.0.0.1:6379",
+  "env": "dev",
+  "cookieKey": "123123123",
+  "authServiceBaseUrl": "http://localhost:4000/auth/"
+}
