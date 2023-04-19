@@ -1,3 +1,4 @@
+// const http3 = require('http3');
 import express, { Application } from 'express';
 import mongoose, { ConnectOptions } from 'mongoose';
 import nconf from 'nconf';
@@ -6,7 +7,6 @@ import cookieSession from 'cookie-session';
 
 import setEnvironment from './env';
 setEnvironment();
-const PORT = 6379;
 
 require('./services/cache');
 
@@ -42,12 +42,22 @@ mongoose.connect(nconf.get('db'),
     // useMongoClient: true
   } as ConnectOptions,
   () => {
-    console.log(console.log("Connected to database"));
+    console.log("Connected to database");
   }
 );
 // mongoose.set('strictQuery', false);
 
-const server = app.listen(PORT, () => {
-  console.log(`Auth service started on port ${PORT}`);
+// const server = http3.createSecureServer({
+//   key: 'server.key', //fs.readFileSync('server.key'),
+//   cert: 'server.cert' //fs.readFileSync('server.cert'),
+// }, app);
+
+// server.listen(nconf.get('PORT'), () => {
+//   console.log(`Blog service started on port ${nconf.get('PORT')}`);
+// });
+
+const server = app.listen(nconf.get('PORT'), () => {
+  console.log(`Blog service started on port ${nconf.get('PORT')}`);
 });
+
 server.timeout = 1000000;

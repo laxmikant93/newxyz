@@ -1,0 +1,69 @@
+
+.input-wrap{
+    width: 100%;
+    .emailto-wrap{
+        border: 1px solid gray;
+        border-radius: 4px;
+        height: 35px;
+        width: 100%;
+       
+        .label-txt{
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+            background-color: #FFF;
+            left: 8px;
+            top: -12px; 
+        }
+        .inputwrap{
+            height: 100%;
+            overflow: hidden;
+            padding: 5px 10px 15px 10px;
+            .emailto-input{
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: transparent;
+                &:focus{
+                    outline: none;
+                    
+                }
+                
+                
+            }
+        }
+    }
+}
+
+.textArea-Container{
+    width: 100%;
+    .messagge-field{
+        border: 1px solid gray;
+        border-radius: 4px;
+     
+        
+        .label-message{
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+            background-color: #FFF;
+            left: 8px;
+            top: -12px;
+        }
+        .text-Input-wrap{
+            padding: 10px 10px 0 10px;
+            .messagge-input{
+                width: 100%;
+                height: 100%;
+                border: none;
+                overflow: hidden;
+                background-color: transparent;
+                &:focus{
+                    outline: none;
+                    
+                }
+            }
+        }
+   
+    }
+}

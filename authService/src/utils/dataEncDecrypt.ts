@@ -5,7 +5,7 @@ import moment from "moment";
 import nconf from 'nconf';
 
 const algo = nconf.get("algorithm")
-const environment = "dev"
+const environment = nconf.get("env")
 const privateKey = fs.readFileSync(`encryptedkeys/mykey${environment}.pem`, "utf8");
 const publicKey = fs.readFileSync(`encryptedkeys/mypub${environment}.pem`, "utf8");
 

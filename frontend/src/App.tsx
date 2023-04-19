@@ -1,31 +1,45 @@
-import React, { useState } from 'react';
-// import { Route } from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 
-import TodoList from './components/TodoList';
-import NewTodo from './components/NewTodo';
-import { Todo } from './todo.model';
-import {MyTypography} from './components/MyTypography';
+import Home from './pages/Home';
+import TodoApp from './pages/TodoApp';
+
+const rootLoader = () => {
+  const resp = 'call apis and other async functions and return their data which goes to the element of the path';
+  return { resp };
+}
 
 const App: React.FC = () => { //FC is a react functional component (not a normal function), which returns JSX
-  const [todos, setTodos] = useState<Todo[]>([]);
 
-  const todoAddHandler = (text: string) => {
-    setTodos(prevTodos => [...prevTodos, {id: Math.random().toString(), text: text}]);
-    console.log(text);
-  };
-
-  const todoDeleteHandler = (todoId: string) => {
-    setTodos(prevTodos => {
-      return prevTodos.filter(todo => todo.id !== todoId);
-    });
-  }
+  const router = createBrowserRouter([
+    {
+      path: "/TodoApp",
+      element: <TodoApp />,
+      errorElement: <div>Error on Todo App</div>,
+      loader: rootLoader,
+      // children: [
+      //   {
+      //     path: "todo/",
+      //     element: <TodoApp />,
+      //   },
+      // ],
+    },
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <div>Error on Home</div>,
+      // children: [
+      //   {
+      //     path: "home",
+      //     element: <TodoApp />,
+      //   },
+      // ],
+    },
+  ]);
 
   return (
-    <div className="App">
-      {/* A component to add todos */}
-      {/* <NewTodo onAddTodo={ todoAddHandler } />
-      <TodoList items={ todos} onDeleteTodo={todoDeleteHandler} /> */}
-      <MyTypography />
+    <div>
+      <RouterProvider router={router} />
     </div>
   );
 }

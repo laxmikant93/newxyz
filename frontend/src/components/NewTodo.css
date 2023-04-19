@@ -17,11 +17,11 @@ form {
     font-weight: bold;
   }
   
-  input {
+  /* input {
     font: inherit;
     border: 1px solid #ccc;
     padding: 0.25rem;
-  }
+  } */
   
   input:focus {
     outline: none;
